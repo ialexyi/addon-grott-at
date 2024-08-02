@@ -15,7 +15,7 @@ COPY script.sh /app/script.sh
 RUN chmod a+x /app/script.sh
 
 WORKDIR /app
-RUN curl -Lk "https://github.com/johanmeijer/grott/archive/$GIT_REF.zip" --output files.zip && unzip -o files.zip && rm files.zip && mv grott-*/*.py ./
+RUN git clone https://github.com/ialexyi/grott-at.git && mv grott-*/*.py ./
 
 COPY requirements.txt requirements.txt
 #Install required python packages
